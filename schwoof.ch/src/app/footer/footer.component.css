@@ -1,7 +1,12 @@
-#footer{
+#footerContainer{
+    width: 100%;
+    background-color: black;
     width: 100%;
 }
 
 #copyright{
     text-align: center;
+    color: aliceblue;
+    margin: 0;
+    padding: .7vh;
 }

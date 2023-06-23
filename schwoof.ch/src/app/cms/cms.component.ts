@@ -1,23 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
-import { doc, getDoc, getFirestore } from "firebase/firestore"; 
+import { doc, setDoc, addDoc, getFirestore } from "firebase/firestore"; 
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  selector: 'app-cms',
+  templateUrl: './cms.component.html',
+  styleUrls: ['./cms.component.css']
 })
-export class HomeComponent implements OnInit {
+export class CmsComponent {
 
-  ngOnInit(): void {
-    this.getPlan();
-  }
-
-  async getPlan() {
-    const jahresplan = await getDoc(doc(db, "plan", "planDoc"));
-    console.log(jahresplan);
-    document.getElementById("planP")!.innerHTML = jahresplan.data()!['planArray'];
+  async updatePlan() {
+    await setDoc(doc(db, "plan", "planDoc"), {
+      planArray: [(<HTMLInputElement>document.getElementById('planInput')).value]
+    });
   }
 
 }
