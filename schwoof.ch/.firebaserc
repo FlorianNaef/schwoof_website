@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "schwoof-79c1a"
+  },
+  "targets": {
+    "schwoof-79c1a": {
+      "hosting": {
+        "schwoof.ch": [
+          "schwoof-79c1a"
+        ]
+      }
+    }
   }
 }

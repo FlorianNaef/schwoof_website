@@ -1,0 +1,14 @@
+#contactInfo {
+    margin-top: 29vh;
+    margin-left: 35vw;
+    margin-bottom: 28vh;
+    width: 30%;
+    background-color: antiquewhite;
+    border-color: blueviolet;
+    border-style: dotted;
+    font-size: 2em;
+}
+
+#contactInfo p {
+    text-align: center;
+}

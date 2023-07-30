@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
-import { doc, setDoc, addDoc, getFirestore } from "firebase/firestore"; 
+import { collection, doc, setDoc, addDoc, getFirestore } from "firebase/firestore"; 
 
 @Component({
   selector: 'app-cms',
@@ -9,6 +9,14 @@ import { doc, setDoc, addDoc, getFirestore } from "firebase/firestore";
   styleUrls: ['./cms.component.css']
 })
 export class CmsComponent {
+
+  async addNews() {
+    await addDoc(collection(db, "news"), {
+      title: (<HTMLInputElement>document.getElementById('newsTitleInput')).value,
+      when: Date.parse((<HTMLInputElement>document.getElementById('newsWhenInput')).value),
+      html: (<HTMLInputElement>document.getElementById('newsHTMLInput')).value
+    })
+  }
 
   async updatePlan() {
     await setDoc(doc(db, "plan", "planDoc"), {

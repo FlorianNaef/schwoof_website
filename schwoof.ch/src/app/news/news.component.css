@@ -1,0 +1,24 @@
+:host::ng-deep #newsContainer {
+    width: 100vw;
+    margin-top: 7vh;
+    display: flex;
+    justify-content: center;
+}
+
+:host::ng-deep .newsDivs {
+    margin: 20vh 20vw;
+}
+
+:host::ng-deep .newsTitles {
+    font-size: 3em;
+    text-align: center;
+}
+
+:host::ng-deep .newsWhens {
+    font-size: 2.5em;
+    text-align: center;
+}
+
+:host::ng-deep .newsHTML {
+    width: 100%;
+}
